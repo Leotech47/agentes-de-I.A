@@ -1,0 +1,84 @@
+{
+  "botTopics": [
+    {
+      "name": "Gerar Relatório Mensal",
+      "description": "Cria e envia um relatório administrativo mensal.",
+      "triggerPhrases": [
+        "gerar relatório mensal",
+        "preciso do relatório de desempenho",
+        "relatório administrativo do mês"
+      ],
+      "conversation": [
+        {
+          "type": "message",
+          "text": "Claro, vou iniciar a geração do relatório mensal. Por favor, informe o mês e o setor."
+        },
+        {
+          "type": "ask",
+          "variable": "mes",
+          "prompt": "Qual o mês do relatório?"
+        },
+        {
+          "type": "ask",
+          "variable": "setor",
+          "prompt": "Qual o setor responsável pelo relatório?"
+        },
+        {
+          "type": "action",
+          "flow": "GerarRelatorioMensal"
+        },
+        {
+          "type": "message",
+          "text": "Relatório do mês {{mes}} para o setor {{setor}} gerado com sucesso."
+        }
+      ]
+    },
+    {
+      "name": "Organizar Arquivos",
+      "description": "Move documentos para pastas organizadas por data.",
+      "triggerPhrases": [
+        "organizar documentos",
+        "mover arquivos",
+        "classificar arquivos por data"
+      ],
+      "conversation": [
+        {
+          "type": "message",
+          "text": "Entendido. Vou mover os arquivos para as pastas corretas."
+        },
+        {
+          "type": "action",
+          "flow": "OrganizarArquivosPorData"
+        },
+        {
+          "type": "message",
+          "text": "Arquivos organizados com sucesso."
+        }
+      ]
+    },
+    {
+      "name": "Responder Dúvidas Administrativas",
+      "description": "Responde perguntas frequentes sobre rotinas administrativas.",
+      "triggerPhrases": [
+        "como solicitar férias",
+        "prazo para protocolo",
+        "norma interna sobre expediente"
+      ],
+      "conversation": [
+        {
+          "type": "message",
+          "text": "Por favor, descreva sua dúvida administrativa."
+        },
+        {
+          "type": "ask",
+          "variable": "duvida",
+          "prompt": "Digite sua pergunta:"
+        },
+        {
+          "type": "message",
+          "text": "Obrigado. Com base nas normas institucionais, segue a resposta: [Resposta automatizada baseada em banco de dados ou regra fixa]."
+        }
+      ]
+    }
+  ]
+}
